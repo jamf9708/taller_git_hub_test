@@ -49,3 +49,20 @@ def show_dataset_2():
     # Show Summary
     if st.checkbox("Show Summary of Dataset"):
         st.write(data.describe())
+def select_column():
+    # Select A Column
+    col_option = st.selectbox("Select Column", ("SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm", "Species"))
+    if col_option == "SepalLengthCm":
+        st.write(data["SepalLengthCm"])
+        #st.write(type(data["SepalLengthCm"]))
+    elif col_option == "SepalWidthCm":
+        st.write(data[["SepalWidthCm"]])
+        #st.write(type(data[["SepalWidthCm"]]))
+    elif col_option == "PetalLengthCm":
+        st.write(data[["PetalLengthCm"]])
+    elif col_option == "PetalWidthCm":
+        st.write(data[["PetalWidthCm"]])    
+    elif col_option == "Species":
+        st.write(data[["Species"]])
+    else:
+        st.write("Select a Column") 
